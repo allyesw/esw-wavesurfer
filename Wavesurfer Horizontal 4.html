@@ -1,0 +1,269 @@
+<head>
+    <style> @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700,900);
+    /* CHANGE THE TEXT COLOR, SIZE, AND FONT HERE */
+    .title {color: #000000; font-size: 12px; font-family:"Lato", sans-serif;}
+    </style>
+    <script>
+        // COLORS
+        var primaryColor = '#000000';
+        var secondaryColor = '#606060';
+        // PLAY BUTTON SIZE
+        var playBtnSize = "1.2rem";
+        // WAVEFORM HEIGHT AND SPACING
+        var waveformHeight = "30";
+        var waveformSpacing = "22px";
+        // SAMPLE TITLES
+        var title1 = "Half Time Stay";
+        var title2 = "Dark Vibes";
+        var title3 = "Emo Lofi";
+        var title4 = "Holo-ish";
+        // AUDIO LINKS
+        var audioSource1 = "https://static.wixstatic.com/mp3/81ef3c_02aafd96cba64aa290c7dac2a69b7069.mp3";
+        var audioSource2 = "https://static.wixstatic.com/mp3/81ef3c_4a1b8a8fc7324df4976618534cd54a92.mp3";
+        var audioSource3 = "https://static.wixstatic.com/mp3/81ef3c_83647907399b49549582bd7aa360ba38.mp3";
+        var audioSource4 = "https://static.wixstatic.com/mp3/81ef3c_86f44a2a82044248a584b16fc543595c.mp3";
+    </script>
+    <style>
+        .waveform-player-container {
+            display:inline-block;
+            padding:0px 0px 0px 0px;
+            overflow:hidden;
+            width:200px;
+        }
+        .play-btn {
+            width:1.2rem;
+            height:30px;
+            border:0;
+            background-color:transparent;
+            outline:transparent;
+            box-shadow:none;
+        }
+        .fas {
+            font-size:1.2rem;
+        }
+        .title {
+            font-weight: 400;
+            margin-left:30px;
+            padding-top:10px;
+        }
+        .waveform-controls {
+            float:left;
+            margin-right:.5rem;
+        }
+        button {
+            padding:0px;
+        }
+        .waveform {
+            background:none;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/89caefc155.js" crossorigin="anonymous"></script>
+</head>
+
+
+<!-- HTML for each instance -->
+<div class="waveform-player-container 1">
+    <div class="waveform-controls 1">
+        <button id="play-btn-1" class="play-btn">
+            <i id="i-play-1" class="fas fa-play" style="display:inline;"></i>
+            <i id="i-pause-1" class="fas fa-pause" style="display:none;"></i>
+        </button>
+    </div>
+    <div id="waveform-1" class="waveform"></div>
+    <div id="title-1" class="title"></div>
+</div>
+
+<div class="waveform-player-container 2">
+    <div class="waveform-controls 2">
+        <button id="play-btn-2" class="play-btn">
+            <i id="i-play-2" class="fas fa-play" style="display:inline;"></i>
+            <i id="i-pause-2" class="fas fa-pause" style="display:none;"></i>
+        </button>
+    </div>
+    <div id="waveform-2" class="waveform"></div>
+    <div id="title-2" class="title"></div>
+</div>
+
+<div class="waveform-player-container 3">
+    <div class="waveform-controls 3">
+        <button id="play-btn-3" class="play-btn">
+            <i id="i-play-3" class="fas fa-play" style="display:inline;"></i>
+            <i id="i-pause-3" class="fas fa-pause" style="display:none;"></i>
+        </button>
+    </div>
+    <div id="waveform-3" class="waveform"></div>
+    <div id="title-3" class="title"></div>
+</div>
+
+<div class="waveform-player-container 4">
+    <div class="waveform-controls 4">
+        <button id="play-btn-4" class="play-btn">
+            <i id="i-play-4" class="fas fa-play" style="display:inline;"></i>
+            <i id="i-pause-4" class="fas fa-pause" style="display:none;"></i>
+        </button>
+    </div>
+    <div id="waveform-4" class="waveform"></div>
+    <div id="title-4" class="title"></div>
+</div>
+
+<script src="https://unpkg.com/wavesurfer.js@1.4.0"></script>
+<script>
+    //Create each wavesurfer instance
+    var wavesurfer1 = WaveSurfer.create({
+        container: '#waveform-1',
+        waveColor: primaryColor,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer2 = WaveSurfer.create({
+        container: '#waveform-2',
+        waveColor: primaryColor,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer3 = WaveSurfer.create({
+        container: '#waveform-3',
+        waveColor: primaryColor,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer4 = WaveSurfer.create({
+        container: '#waveform-4',
+        waveColor: primaryColor,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Bind play/pause icons
+        let playPause1 = document.querySelector('#play-btn-1');
+        playPause1.addEventListener('click', function() {
+            wavesurfer1.playPause();
+        });
+
+        let playPause2 = document.querySelector('#play-btn-2');
+        playPause2.addEventListener('click', function() {
+            wavesurfer2.playPause();
+        });
+
+        let playPause3 = document.querySelector('#play-btn-3');
+        playPause3.addEventListener('click', function() {
+            wavesurfer3.playPause();
+        });
+
+        let playPause4 = document.querySelector('#play-btn-4');
+        playPause4.addEventListener('click', function() {
+            wavesurfer4.playPause();
+        });
+
+
+        // Toggle play/pause icons
+        wavesurfer1.on('play', function() {
+            document.querySelector('#i-play-1').style.display = 'none';
+            document.querySelector('#i-pause-1').style.display = 'inline';
+        });
+        wavesurfer1.on('pause', function() {
+            document.querySelector('#i-play-1').style.display = 'inline';
+            document.querySelector('#i-pause-1').style.display = 'none';
+        });
+
+        wavesurfer2.on('play', function() {
+            document.querySelector('#i-play-2').style.display = 'none';
+            document.querySelector('#i-pause-2').style.display = 'inline';
+        });
+        wavesurfer2.on('pause', function() {
+            document.querySelector('#i-play-2').style.display = 'inline';
+            document.querySelector('#i-pause-2').style.display = 'none';
+        });
+
+        wavesurfer3.on('play', function() {
+            document.querySelector('#i-play-3').style.display = 'none';
+            document.querySelector('#i-pause-3').style.display = 'inline';
+        });
+        wavesurfer3.on('pause', function() {
+            document.querySelector('#i-play-3').style.display = 'inline';
+            document.querySelector('#i-pause-3').style.display = 'none';
+        });
+
+        wavesurfer4.on('play', function() {
+            document.querySelector('#i-play-4').style.display = 'none';
+            document.querySelector('#i-pause-4').style.display = 'inline';
+        });
+        wavesurfer4.on('pause', function() {
+            document.querySelector('#i-play-4').style.display = 'inline';
+            document.querySelector('#i-pause-4').style.display = 'none';
+        });
+    });
+
+    // Sample titles
+    document.getElementById("title-1").innerHTML = title1;
+    document.getElementById("title-2").innerHTML = title2;
+    document.getElementById("title-3").innerHTML = title3;
+    document.getElementById("title-4").innerHTML = title4;
+
+    // Sync icon color to primary color
+    var iTag = document.getElementsByTagName("i");
+    var i;
+    for (i = 0; i < iTag.length; i++) {
+        iTag[i].style.color = primaryColor;
+    }
+
+    // Bind waveformSpacing to .waveform-player-container padding-left and padding-right
+    var waveformContainerClass = document.getElementsByClassName("waveform-player-container");
+    for (i = 0; i < waveformContainerClass.length; i++) {
+        waveformContainerClass[i].style.paddingLeft = waveformSpacing;
+        waveformContainerClass[i].style.paddingRight = waveformSpacing;
+    }    
+
+    // Sync .play-btn height with wavesurfer height
+    var waveformHeightPx = waveformHeight + "px";
+    var playBtnClass = document.getElementsByClassName("play-btn");
+    for (i = 0; i < playBtnClass.length; i++) {
+        playBtnClass[i].style.height = waveformHeightPx;
+    }
+
+    // Sync .play-btn width to playBtnSize
+    var playBtnClass = document.getElementsByClassName("play-btn");
+    for (i = 0; i < playBtnClass.length; i++) {
+        playBtnClass[i].style.width = playBtnSize;
+    }
+
+    // Sync .fas font-size to playBtnSize
+    var fasClass = document.getElementsByClassName("fas");
+    for (i = 0; i < fasClass.length; i++) {
+        fasClass[i].style.fontSize = playBtnSize;
+    }
+
+    //Load each audio file
+    wavesurfer1.load(audioSource1);
+    wavesurfer2.load(audioSource2);
+    wavesurfer3.load(audioSource3);
+    wavesurfer4.load(audioSource4);
+</script>
