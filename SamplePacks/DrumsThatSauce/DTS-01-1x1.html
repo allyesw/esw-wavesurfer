@@ -1,0 +1,55 @@
+<head>
+	<!-- CHANGE THE BUTTON COLOR HERE -->
+	<style> i {color: #F62322;} </style>
+	<!-- PUT THE AUDIO LINK AND COLORS HERE -->
+	<script>
+		var audioSource = "https://static.wixstatic.com/mp3/81ef3c_ba3fefc061354f37a6f66f15ba9f9856.mp3";
+		var primaryColor = '#F62322';
+		var secondaryColor = '#7a1111';
+	</script>
+	<script src="https://kit.fontawesome.com/89caefc155.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="waveform-player-container">
+	<div class="waveform-controls" style="float:left;">
+		<button id="play-btn" style="width:50px; height:60px; border:0; background-color:transparent; outline:transparent; box-shadow:none;">
+			<i id="i-play" class="fas fa-play fa-2x" style="display:inline;"></i>
+			<i id="i-pause" class="fas fa-pause fa-2x" style="display:none;"></i>
+		</button>
+	</div>
+	<div id="waveform" style="background:none;"></div>
+	<script src="https://unpkg.com/wavesurfer.js@1.4.0"></script>
+	<script>
+		var wavesurfer = WaveSurfer.create({
+			container: '#waveform',
+    		waveColor: primaryColor,
+    		progressColor: secondaryColor,
+    		height: '60',
+    		normalize: true,
+    		cursorWidth: 0,
+    		hideScrollbar: true,
+    		autoCenter: true,
+    		fillParent: true,
+    		responsive: true
+		});
+
+		document.getElementById("play-btn").addEventListener("click", function () {
+			wavesurfer.playPause();
+		});
+
+		wavesurfer.on('play', function() {
+			document.getElementById("i-play").style.display = "none";
+			document.getElementById("i-pause").style.display = "inline";
+		});
+		wavesurfer.on('pause', function() {
+			document.getElementById("i-play").style.display = "inline";
+			document.getElementById("i-pause").style.display = "none";
+		});
+
+		wavesurfer.on('finish', function() {
+			wavesurfer.stop();
+		});
+
+		wavesurfer.load(audioSource);
+	</script>
+</div>
