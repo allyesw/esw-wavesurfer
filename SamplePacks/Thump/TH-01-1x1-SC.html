@@ -1,0 +1,67 @@
+<!-- Thump Wavesurfer - Soundcloud Style Player -->
+<!-- Updated 4/17/24 (removed unused fontawesome link) -->
+<head>
+    <style>
+        /* CHANGE THE CIRCLE BUTTON COLOR HERE */
+        circle {fill: #8B8CD6;} 
+        /* CHANGE THE VERTICAL SPACE BETWEEN THE BUTTON AND WAVEFORM HERE */
+        .waveform-controls {margin-bottom: 10px;}
+    </style>
+    <!-- PUT THE AUDIO LINK AND COLORS HERE -->
+    <script>
+        var audioSource = "https://static.wixstatic.com/mp3/81ef3c_258be3b166e54c6795720ae63c030e86.mp3";
+        var primaryGradient = '#313131';
+        var secondaryGradient = '#6E69C6';
+    </script>
+</head>
+
+<div class="waveform-player-container">
+    <div class="waveform-controls" style="display:block;">
+        <button id="play-btn" style="width:40px; height:40px; border:0; background-color:transparent; outline:transparent; box-shadow:none; padding:0;">
+            <svg width="40" height="40" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="25"/>
+              <path id="i-play" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+              <path id="i-pause" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+            </svg>
+        </button>
+    </div>
+    <div id="waveform" style="background:none;"></div>
+    <script src="https://unpkg.com/wavesurfer.js@1.4.0"></script>
+    <script>
+        var wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: primaryGradient,
+            progressColor: secondaryGradient,
+            height: '50',
+            normalize: true,
+            cursorWidth: 0,
+            barWidth: 1.5,
+            barGap: 0,
+            barRadius: 1,
+            hideScrollbar: true,
+            autoCenter: true,
+            fillParent: true,
+            responsive: true
+           
+        });
+
+        document.getElementById("play-btn").addEventListener("click", function () {
+            wavesurfer.playPause();
+        });
+
+        wavesurfer.on('play', function() {
+            document.getElementById("i-play").style.display = "none";
+            document.getElementById("i-pause").style.display = "inline";
+        });
+        wavesurfer.on('pause', function() {
+            document.getElementById("i-play").style.display = "inline";
+            document.getElementById("i-pause").style.display = "none";
+        });
+
+        wavesurfer.on('finish', function() {
+            wavesurfer.stop();
+        });
+
+        wavesurfer.load(audioSource);
+    </script>
+</div>

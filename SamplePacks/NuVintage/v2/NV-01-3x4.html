@@ -1,0 +1,691 @@
+<!-- Nu Vintage Wavesurfer (3x4 Column Style)-->
+<!-- Updated 4/17/24 -->
+<head>
+    <style> @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700,900);
+    /* CHANGE THE TEXT COLOR, SIZE, AND FONT HERE */
+    .title {color: #ffffff; font-size: 12px; font-family:"Lato", sans-serif;}
+    </style>
+    <script>
+        // COLORS
+        var primaryColor1 = '#DCAB82';
+        var primaryColor2 = '#DCAB82';
+        var primaryColor3 = '#DCAB82';
+        var secondaryColor = '#606060';
+        // PLAY BUTTON SIZE
+        var playBtnSize = "20";
+        // WAVEFORM HEIGHT AND SPACING
+        var waveformHeight = "30";
+        var waveformWidth = "260";
+        var waveformSpacingLeft = "20px";
+        var waveformSpacingRight = "20px";
+        var waveformSpacingBottom = "10px";
+        var waveformSpacingTop = "10px";
+        // SAMPLE TITLES
+        var title1 = "ESWSW Kick 00 - C - Brody C";
+        var title2 = "ESWSW Kick 01 - C - Disco Pop";
+        var title3 = "ESWSW Kick 15 - D - 1985";
+        var title4 = "ESWSW Kick 29 - G - Cannibals";
+
+        var title5 = "ESWSW Snare 02 - C - Twix";
+        var title6 = "ESWSW Snare 00 - C - Mars Bar";
+        var title7 = "ESWSW Snare 12 - C - Fizbo";
+        var title8 = "ESWSW Snare 60 - G - FYC";
+
+        var title9 = "ESWSW - Clap - Drum Machine 1";
+        var title10 = "ESWSW - Clap - Fire";
+        var title11 = "ESWSW - Clap - Charm";
+        var title12 = "ESWSW - Clap - Comet";
+        // AUDIO LINKS
+        var audioSource1 = "https://static.wixstatic.com/mp3/81ef3c_02aafd96cba64aa290c7dac2a69b7069.mp3";
+        var audioSource2 = "https://static.wixstatic.com/mp3/81ef3c_4a1b8a8fc7324df4976618534cd54a92.mp3";
+        var audioSource3 = "https://static.wixstatic.com/mp3/81ef3c_83647907399b49549582bd7aa360ba38.mp3";
+        var audioSource4 = "https://static.wixstatic.com/mp3/81ef3c_86f44a2a82044248a584b16fc543595c.mp3";
+
+        var audioSource5 = "https://static.wixstatic.com/mp3/81ef3c_f09a5c70b5ec4836a5b3f0eda0a4d44f.mp3";
+        var audioSource6 = "https://static.wixstatic.com/mp3/81ef3c_d54f62908bb94ba0a51b283a1189fff2.mp3";
+        var audioSource7 = "https://static.wixstatic.com/mp3/81ef3c_f6675f44cdc842d1b0adecb54293bfcb.mp3";
+        var audioSource8 = "https://static.wixstatic.com/mp3/81ef3c_86831d3f5ff54f40aa877dc84a5f0d3d.mp3";
+
+        var audioSource9 = "https://static.wixstatic.com/mp3/81ef3c_97f52fa6ff3a4434a55548842c039d70.mp3";
+        var audioSource10 = "https://static.wixstatic.com/mp3/81ef3c_b3cb4f8762634d1aaa2387b3512ea644.mp3";
+        var audioSource11 = "https://static.wixstatic.com/mp3/81ef3c_f666c47003684451aa90e8019148f386.mp3";
+        var audioSource12 = "https://static.wixstatic.com/mp3/81ef3c_560ca500f0294521b3d06d74604976a7.mp3";
+    </script>
+    <style>
+        #wrapper {
+            margin: auto;
+        }
+        .waveform-player-container {
+            display:block;
+            width: 260px;
+            padding:0px 0px 0px 0px;
+            overflow:hidden;
+        }
+        .col {
+            display:inline-block;
+        }
+        .play-btn {
+            width:30px;
+            height:30px;
+            border:0;
+            background-color:transparent;
+            outline:transparent;
+            box-shadow:none;
+        }
+        .title {
+            font-weight: 400;
+            margin-left:30px;
+            padding-top:10px;
+            text-align: left;
+        }
+        .waveform-controls {
+            float:left;
+            margin-right:.5rem;
+        }
+        button {
+            padding:0px;
+        }
+        .waveform {
+            background:none;
+        }
+    </style>
+</head>
+
+
+<!-- HTML for each instance -->
+<div id="wrapper">
+    <div id="col1" class="col">
+        <div class="waveform-player-container 1">
+            <div class="waveform-controls 1">
+                <button id="play-btn-1" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-1" class="fas fa-play color1" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-1" class="fas fa-pause color1" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-1" class="waveform"></div>
+            <div id="title-1" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 2">
+            <div class="waveform-controls 2">
+                <button id="play-btn-2" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-2" class="fas fa-play color1" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-2" class="fas fa-pause color1" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-2" class="waveform"></div>
+            <div id="title-2" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 3">
+            <div class="waveform-controls 3">
+                <button id="play-btn-3" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-3" class="fas fa-play color1" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-3" class="fas fa-pause color1" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-3" class="waveform"></div>
+            <div id="title-3" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 4">
+            <div class="waveform-controls 4">
+                <button id="play-btn-4" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-4" class="fas fa-play color1" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-4" class="fas fa-pause color1" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-4" class="waveform"></div>
+            <div id="title-4" class="title"></div>
+        </div>
+    </div> <!-- end col1 -->
+
+    <div id="col2" class="col">
+        <div class="waveform-player-container 5">
+            <div class="waveform-controls 5">
+                <button id="play-btn-5" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-5" class="fas fa-play color2" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-5" class="fas fa-pause color2" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-5" class="waveform"></div>
+            <div id="title-5" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 6">
+            <div class="waveform-controls 6">
+                <button id="play-btn-6" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-6" class="fas fa-play color2" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-6" class="fas fa-pause color2" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-6" class="waveform"></div>
+            <div id="title-6" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 7">
+            <div class="waveform-controls 7">
+                <button id="play-btn-7" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-7" class="fas fa-play color2" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-7" class="fas fa-pause color2" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-7" class="waveform"></div>
+            <div id="title-7" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 8">
+            <div class="waveform-controls 8">
+                <button id="play-btn-8" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-8" class="fas fa-play color2" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-8" class="fas fa-pause color2" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-8" class="waveform"></div>
+            <div id="title-8" class="title"></div>
+        </div>
+    </div> <!-- end col2 -->
+
+    <div id="col3" class="col">
+        <div class="waveform-player-container 9">
+            <div class="waveform-controls 9">
+                <button id="play-btn-9" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-9" class="fas fa-play color3" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-9" class="fas fa-pause color3" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-9" class="waveform"></div>
+            <div id="title-9" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 10">
+            <div class="waveform-controls 10">
+                <button id="play-btn-10" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-10" class="fas fa-play color3" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-10" class="fas fa-pause color3" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-10" class="waveform"></div>
+            <div id="title-10" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 11">
+            <div class="waveform-controls 11">
+                <button id="play-btn-11" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-11" class="fas fa-play color3" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-11" class="fas fa-pause color3" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-11" class="waveform"></div>
+            <div id="title-11" class="title"></div>
+        </div>
+
+        <div class="waveform-player-container 12">
+            <div class="waveform-controls 12">
+                <button id="play-btn-12" class="play-btn">
+                    <svg class="fa-svg" width="100%" height="100%" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="matrix(1.68304,0,0,1.68304,-18.3851,-17.0759)">
+                            <path id="i-play-12" class="fas fa-play color3" style="display:inline;" d="M38.25,28.608L19.75,39.29C16.972,40.893 13.5,38.889 13.5,35.681L13.5,14.319C13.5,11.111 16.972,9.107 19.75,10.71L38.25,21.392C41.028,22.995 41.028,27.005 38.25,28.608Z" style="fill:white;display:inline"/>
+                            <path id="i-pause-12" class="fas fa-pause color3" style="display:none;" d="M21.125,14.625C21.125,12.348 19.277,10.5 17,10.5C14.723,10.5 12.875,12.348 12.875,14.625L12.875,35.375C12.875,37.652 14.723,39.5 17,39.5C19.277,39.5 21.125,37.652 21.125,35.375L21.125,14.625ZM37.125,14.625C37.125,12.348 35.277,10.5 33,10.5C30.723,10.5 28.875,12.348 28.875,14.625L28.875,35.375C28.875,37.652 30.723,39.5 33,39.5C35.277,39.5 37.125,37.652 37.125,35.375L37.125,14.625Z" style="fill:white;display:none"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div id="waveform-12" class="waveform"></div>
+            <div id="title-12" class="title"></div>
+        </div>
+    </div> <!-- end col3 -->
+
+</div>
+
+<script src="https://unpkg.com/wavesurfer.js@3.0.0"></script>
+<script>
+    //Create each wavesurfer instance
+    var wavesurfer1 = WaveSurfer.create({
+        container: '#waveform-1',
+        waveColor: primaryColor1,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer2 = WaveSurfer.create({
+        container: '#waveform-2',
+        waveColor: primaryColor1,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer3 = WaveSurfer.create({
+        container: '#waveform-3',
+        waveColor: primaryColor1,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer4 = WaveSurfer.create({
+        container: '#waveform-4',
+        waveColor: primaryColor1,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer5 = WaveSurfer.create({
+        container: '#waveform-5',
+        waveColor: primaryColor2,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer6 = WaveSurfer.create({
+        container: '#waveform-6',
+        waveColor: primaryColor2,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer7 = WaveSurfer.create({
+        container: '#waveform-7',
+        waveColor: primaryColor2,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer8 = WaveSurfer.create({
+        container: '#waveform-8',
+        waveColor: primaryColor2,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer9 = WaveSurfer.create({
+        container: '#waveform-9',
+        waveColor: primaryColor3,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer10 = WaveSurfer.create({
+        container: '#waveform-10',
+        waveColor: primaryColor3,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer11 = WaveSurfer.create({
+        container: '#waveform-11',
+        waveColor: primaryColor3,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    var wavesurfer12 = WaveSurfer.create({
+        container: '#waveform-12',
+        waveColor: primaryColor3,
+        progressColor: secondaryColor,
+        height: waveformHeight,
+        normalize: true,
+        cursorWidth: 0,
+        hideScrollbar: true,
+        autoCenter: true,
+        fillParent: true,
+        responsive: true
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Bind play/pause icons
+        let playPause1 = document.querySelector('#play-btn-1');
+        playPause1.addEventListener('click', function() {
+            wavesurfer1.playPause();
+        });
+
+        let playPause2 = document.querySelector('#play-btn-2');
+        playPause2.addEventListener('click', function() {
+            wavesurfer2.playPause();
+        });
+
+        let playPause3 = document.querySelector('#play-btn-3');
+        playPause3.addEventListener('click', function() {
+            wavesurfer3.playPause();
+        });
+
+        let playPause4 = document.querySelector('#play-btn-4');
+        playPause4.addEventListener('click', function() {
+            wavesurfer4.playPause();
+        });
+
+        let playPause5 = document.querySelector('#play-btn-5');
+        playPause5.addEventListener('click', function() {
+            wavesurfer5.playPause();
+        });
+
+        let playPause6 = document.querySelector('#play-btn-6');
+        playPause6.addEventListener('click', function() {
+            wavesurfer6.playPause();
+        });
+
+        let playPause7 = document.querySelector('#play-btn-7');
+        playPause7.addEventListener('click', function() {
+            wavesurfer7.playPause();
+        });
+
+        let playPause8 = document.querySelector('#play-btn-8');
+        playPause8.addEventListener('click', function() {
+            wavesurfer8.playPause();
+        });
+
+        let playPause9 = document.querySelector('#play-btn-9');
+        playPause9.addEventListener('click', function() {
+            wavesurfer9.playPause();
+        });
+
+        let playPause10 = document.querySelector('#play-btn-10');
+        playPause10.addEventListener('click', function() {
+            wavesurfer10.playPause();
+        });
+
+        let playPause11 = document.querySelector('#play-btn-11');
+        playPause11.addEventListener('click', function() {
+            wavesurfer11.playPause();
+        });
+
+        let playPause12 = document.querySelector('#play-btn-12');
+        playPause12.addEventListener('click', function() {
+            wavesurfer12.playPause();
+        });
+
+
+        // Toggle play/pause icons
+        wavesurfer1.on('play', function() {
+            document.querySelector('#i-play-1').style.display = 'none';
+            document.querySelector('#i-pause-1').style.display = 'inline';
+        });
+        wavesurfer1.on('pause', function() {
+            document.querySelector('#i-play-1').style.display = 'inline';
+            document.querySelector('#i-pause-1').style.display = 'none';
+        });
+
+        wavesurfer2.on('play', function() {
+            document.querySelector('#i-play-2').style.display = 'none';
+            document.querySelector('#i-pause-2').style.display = 'inline';
+        });
+        wavesurfer2.on('pause', function() {
+            document.querySelector('#i-play-2').style.display = 'inline';
+            document.querySelector('#i-pause-2').style.display = 'none';
+        });
+
+        wavesurfer3.on('play', function() {
+            document.querySelector('#i-play-3').style.display = 'none';
+            document.querySelector('#i-pause-3').style.display = 'inline';
+        });
+        wavesurfer3.on('pause', function() {
+            document.querySelector('#i-play-3').style.display = 'inline';
+            document.querySelector('#i-pause-3').style.display = 'none';
+        });
+
+        wavesurfer4.on('play', function() {
+            document.querySelector('#i-play-4').style.display = 'none';
+            document.querySelector('#i-pause-4').style.display = 'inline';
+        });
+        wavesurfer4.on('pause', function() {
+            document.querySelector('#i-play-4').style.display = 'inline';
+            document.querySelector('#i-pause-4').style.display = 'none';
+        });
+
+        wavesurfer5.on('play', function() {
+            document.querySelector('#i-play-5').style.display = 'none';
+            document.querySelector('#i-pause-5').style.display = 'inline';
+        });
+        wavesurfer5.on('pause', function() {
+            document.querySelector('#i-play-5').style.display = 'inline';
+            document.querySelector('#i-pause-5').style.display = 'none';
+        });
+
+        wavesurfer6.on('play', function() {
+            document.querySelector('#i-play-6').style.display = 'none';
+            document.querySelector('#i-pause-6').style.display = 'inline';
+        });
+        wavesurfer6.on('pause', function() {
+            document.querySelector('#i-play-6').style.display = 'inline';
+            document.querySelector('#i-pause-6').style.display = 'none';
+        });
+
+        wavesurfer7.on('play', function() {
+            document.querySelector('#i-play-7').style.display = 'none';
+            document.querySelector('#i-pause-7').style.display = 'inline';
+        });
+        wavesurfer7.on('pause', function() {
+            document.querySelector('#i-play-7').style.display = 'inline';
+            document.querySelector('#i-pause-7').style.display = 'none';
+        });
+
+        wavesurfer8.on('play', function() {
+            document.querySelector('#i-play-8').style.display = 'none';
+            document.querySelector('#i-pause-8').style.display = 'inline';
+        });
+        wavesurfer8.on('pause', function() {
+            document.querySelector('#i-play-8').style.display = 'inline';
+            document.querySelector('#i-pause-8').style.display = 'none';
+        });
+
+        wavesurfer9.on('play', function() {
+            document.querySelector('#i-play-9').style.display = 'none';
+            document.querySelector('#i-pause-9').style.display = 'inline';
+        });
+        wavesurfer9.on('pause', function() {
+            document.querySelector('#i-play-9').style.display = 'inline';
+            document.querySelector('#i-pause-9').style.display = 'none';
+        });
+
+        wavesurfer10.on('play', function() {
+            document.querySelector('#i-play-10').style.display = 'none';
+            document.querySelector('#i-pause-10').style.display = 'inline';
+        });
+        wavesurfer10.on('pause', function() {
+            document.querySelector('#i-play-10').style.display = 'inline';
+            document.querySelector('#i-pause-10').style.display = 'none';
+        });
+
+        wavesurfer11.on('play', function() {
+            document.querySelector('#i-play11').style.display = 'none';
+            document.querySelector('#i-pause-11').style.display = 'inline';
+        });
+        wavesurfer11.on('pause', function() {
+            document.querySelector('#i-play-11').style.display = 'inline';
+            document.querySelector('#i-pause-11').style.display = 'none';
+        });
+
+        wavesurfer12.on('play', function() {
+            document.querySelector('#i-play-12').style.display = 'none';
+            document.querySelector('#i-pause-12').style.display = 'inline';
+        });
+        wavesurfer12.on('pause', function() {
+            document.querySelector('#i-play-12').style.display = 'inline';
+            document.querySelector('#i-pause-12').style.display = 'none';
+        });
+    });
+
+    // Sample titles
+    document.getElementById("title-1").innerHTML = title1;
+    document.getElementById("title-2").innerHTML = title2;
+    document.getElementById("title-3").innerHTML = title3;
+    document.getElementById("title-4").innerHTML = title4;
+    document.getElementById("title-5").innerHTML = title5;
+    document.getElementById("title-6").innerHTML = title6;
+    document.getElementById("title-7").innerHTML = title7;
+    document.getElementById("title-8").innerHTML = title8;
+    document.getElementById("title-9").innerHTML = title9;
+    document.getElementById("title-10").innerHTML = title10;
+    document.getElementById("title-11").innerHTML = title11;
+    document.getElementById("title-12").innerHTML = title12;
+
+    // Sync icon colors to primary colors
+    var i;
+    var colorClass1 = document.getElementsByClassName("color1");
+    for (i = 0; i < colorClass1.length; i++) {
+        colorClass1[i].style.fill = primaryColor1;
+    }
+
+    var colorClass2 = document.getElementsByClassName("color2");
+    for (i = 0; i < colorClass2.length; i++) {
+        colorClass2[i].style.fill = primaryColor2;
+    }
+
+    var colorClass3 = document.getElementsByClassName("color3");
+    for (i = 0; i < colorClass3.length; i++) {
+        colorClass3[i].style.fill = primaryColor3;
+    }
+
+    // Bind waveformSpacing to .waveform-player-container padding
+    var waveformContainerClass = document.getElementsByClassName("waveform-player-container");
+    for (i = 0; i < waveformContainerClass.length; i++) {
+        waveformContainerClass[i].style.paddingRight = waveformSpacingRight;
+        waveformContainerClass[i].style.paddingLeft = waveformSpacingLeft;
+        waveformContainerClass[i].style.paddingBottom = waveformSpacingBottom;
+        waveformContainerClass[i].style.paddingTop = waveformSpacingTop;
+        waveformContainerClass[i].style.width = waveformWidth;
+    }    
+
+    // Sync .play-btn height with wavesurfer height
+    var waveformHeightPx = waveformHeight + "px";
+    var playBtnClass = document.getElementsByClassName("play-btn");
+    for (i = 0; i < playBtnClass.length; i++) {
+        playBtnClass[i].style.height = waveformHeightPx;
+    }
+
+    // Sync .play-btn width to playBtnSize
+    var playBtnClass = document.getElementsByClassName("play-btn");
+    for (i = 0; i < playBtnClass.length; i++) {
+        playBtnClass[i].style.width = playBtnSize;
+    }
+
+    // Sync svg size to playBtnSize
+    var svgClass = document.getElementsByClassName("fa-svg");
+    for (i = 0; i < svgClass.length; i++) {
+        svgClass[i].style.width = playBtnSize;
+        svgClass[i].style.height = playBtnSize;
+    }
+
+    //Load each audio file
+    wavesurfer1.load(audioSource1);
+    wavesurfer2.load(audioSource2);
+    wavesurfer3.load(audioSource3);
+    wavesurfer4.load(audioSource4);
+    wavesurfer5.load(audioSource5);
+    wavesurfer6.load(audioSource6);
+    wavesurfer7.load(audioSource7);
+    wavesurfer8.load(audioSource8);
+    wavesurfer9.load(audioSource9);
+    wavesurfer10.load(audioSource10);
+    wavesurfer11.load(audioSource11);
+    wavesurfer12.load(audioSource12);
+</script>
