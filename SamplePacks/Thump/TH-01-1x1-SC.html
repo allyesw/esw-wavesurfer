@@ -1,11 +1,17 @@
 <!-- Thump Wavesurfer - Soundcloud Style Player -->
 <!-- Updated 4/17/24 (removed unused fontawesome link) -->
+<!-- Updated 6/19/24 (added mobile layout - not added to website for thump yet) -->
 <head>
     <style>
         /* CHANGE THE CIRCLE BUTTON COLOR HERE */
         circle {fill: #8B8CD6;} 
         /* CHANGE THE VERTICAL SPACE BETWEEN THE BUTTON AND WAVEFORM HERE */
         .waveform-controls {margin-bottom: 10px;}
+        /* MOBILE LAYOUT */
+        #waveform {width: 240px;} /* set width to 60px less than mobile iframe width */
+        @media screen and (min-width: 301px;) {
+            #waveform {width: 100%;}
+        }
     </style>
     <!-- PUT THE AUDIO LINK AND COLORS HERE -->
     <script>
@@ -16,7 +22,7 @@
 </head>
 
 <div class="waveform-player-container">
-    <div class="waveform-controls" style="display:block;">
+    <div class="waveform-controls" style="display:inline-block;">
         <button id="play-btn" style="width:40px; height:40px; border:0; background-color:transparent; outline:transparent; box-shadow:none; padding:0;">
             <svg width="40" height="40" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
               <circle cx="25" cy="25" r="25"/>
@@ -25,7 +31,7 @@
             </svg>
         </button>
     </div>
-    <div id="waveform" style="background:none;"></div>
+    <div id="waveform" style="background:none;display:inline-block;"></div>
     <script src="https://unpkg.com/wavesurfer.js@1.4.0"></script>
     <script>
         var wavesurfer = WaveSurfer.create({
